@@ -5,13 +5,13 @@ import jinja2
 
 TEMPLATE = """
 import flask
-import flask.ext.sqlalchemy
-import flask.ext.restless
+import flask_sqlalchemy
+import flask_restless
 
 app = flask.Flask(__name__)
 app.config['DEBUG'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
-db = flask.ext.sqlalchemy.SQLAlchemy(app)
+db = flask_sqlalchemy.SQLAlchemy(app)
 {% for row in tables %}
 {% for k, v in row.items() %}
 class {{ k }}(db.Model):
@@ -27,12 +27,13 @@ class {{ k }}(db.Model):
 
 
 db.create_all()
-manager = flask.ext.restless.APIManager(app, flask_sqlalchemy_db=db)
-{% for row in tables %}
+
+manager = flask_restless.APIManager(app, flask_sqlalchemy_db=db)
+{% for row in tables -%}
 {% for k, v in row.items() %}
 manager.create_api({{k}}, methods=['GET', 'POST', 'DELETE'])
 {% endfor %}
-{% endfor %}
+{%- endfor %}
 if __name__ == '__main__':# main()
     app.run(port=5353)
 """
