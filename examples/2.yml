@@ -1,0 +1,16 @@
+inventory:
+  product_id:
+    dtype: Unicode
+    length: 36
+    primary_key: true
+  stock:
+    dtype: Integer
+
+products:
+  product_id:
+    dtype: Unicode
+    primary_key: true
+  product_name:
+    dtype: Unicode
+  product_price_usd:
+    dtype: Float

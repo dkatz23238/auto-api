@@ -1,0 +1,17 @@
+# types: boolean, unicode, integer, date, datetime, float
+people:
+  first_name:
+    dtype: Unicode
+    primary_key: true
+  last_name:
+    dtype: Unicode
+  age:
+    dtype: Integer
+
+teams:
+  team_name:
+    dtype: Unicode
+  team_id:
+    dtype: Unicode
+    length: 36
+    primary_key: true
