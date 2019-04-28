@@ -34,7 +34,7 @@ manager = flask_restless.APIManager(app, flask_sqlalchemy_db=db)
 manager.create_api({{k}}, methods=['GET', 'POST', 'DELETE'])
 {% endfor %}
 {%- endfor %}
-if __name__ == '__main__':# main()
+if __name__ == '__main__':
     app.run(port=5353)
 """
 

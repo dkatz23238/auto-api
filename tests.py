@@ -72,7 +72,7 @@ manager.create_api(people, methods=['GET', 'POST', 'DELETE'])
 
 manager.create_api(teams, methods=['GET', 'POST', 'DELETE'])
 
-if __name__ == '__main__':# main()
+if __name__ == '__main__':
     app.run(port=5353)
 """
 output1 = """
@@ -107,7 +107,7 @@ manager.create_api(inventory, methods=['GET', 'POST', 'DELETE'])
 
 manager.create_api(products, methods=['GET', 'POST', 'DELETE'])
 
-if __name__ == '__main__':# main()
+if __name__ == '__main__':
     app.run(port=5353)
 """
 auto_api_dict = oyaml.load(input, Loader=SafeLoader)
